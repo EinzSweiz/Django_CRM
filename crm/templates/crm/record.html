@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Record: {{record}}</h1>
+
+<div class="card text-bg-dark mb-3" >
+    <div class="card-header">
+        {{record}}
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" style="display: flex; justify-content: space-between;"><strong>ID</strong> {{record.id}}</li>
+      <li class="list-group-item" style="display: flex; justify-content: space-between;"><strong>First Name</strong> {{record.first_name}}</li>
+      <li class="list-group-item" style="display: flex; justify-content: space-between;"><strong>Last Name</strong>{{record.last_name}}</li>
+      <li class="list-group-item" style="display: flex; justify-content: space-between;"><strong>Phone</strong> {{record.phone}}</li>
+      <li class="list-group-item" style="display: flex; justify-content: space-between;"><strong>Address</strong> {{record.address}}</li>
+      <li class="list-group-item" style="display: flex; justify-content: space-between;"><strong>City</strong> {{record.city}}</li>
+      <li class="list-group-item" style="display: flex; justify-content: space-between;"><strong>Zipcode</strong> {{record.zipcode}}</li>
+      <li class="list-group-item" style="display: flex; justify-content: space-between;"><strong>Created at</strong> {{record.created_at}}</li>
+    </ul>
+  </div>
+  <br>
+  <a href="{% url 'home' %}"  class="btn btn-outline-dark">Return Home</a>
+  <a href="{% url 'delete_record' record.id %}"  class="btn btn-outline-danger">Delete</a>
+  <a href="{% url 'update_record' record.id %}" class="btn btn-outline-success">Update</a>
+  
+{% endblock %}

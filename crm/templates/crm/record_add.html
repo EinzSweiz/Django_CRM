@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Add Record</h2>
+<form method="POST" action="{% url 'add_records'%}">
+    {% csrf_token %}
+    
+   {{ form.as_p }}
+
+   <div style="display: flex; justify-content: space-between;">
+    <a href="{% url 'home' %}" class="btn btn-outline-danger">Back</a>
+    <button type="submit" class="btn btn-outline-success">Add Record</button>
+</div>
+</form>
+{% endblock %}
